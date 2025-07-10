@@ -1,0 +1,23 @@
+# Node modules (dependencias)
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Entornos
+.env
+
+# Directorios del sistema o editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Salida de producción o builds
+dist/
+build/
+
+# Archivos del sistema
+*.swp
