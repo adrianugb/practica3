@@ -1,7 +1,3 @@
-//Definimos la entidad
-//?????
-//id, nombre, descripcion, estado 
-//Declaracion de libreria
 const mongoose = require('mongoose');
 
 const CursoSchema = new mongoose.Schema(

@@ -1,11 +1,6 @@
-//Declarar nuestra librerias
 const express = require('express');
 const router = express.Router();
 const Curso = require('../models/Curso');
-
-
-//Post sirve para insertar datos
-//Equivalencia db.getCollection('NEW_COLLECTION_NAME').insertOne({
 router.post('/', async (req, res) => {
         try {
             const datosCurso = new Curso(req.body);
@@ -25,7 +20,6 @@ router.get('/', async(req, res) =>{
 
     }
 );
-//Obtener 
 router.get('/:id', async(req, res) =>{
         const listaDatos = await Curso.findOne({id: req.params.id});
         if (listaDatos) {
@@ -36,9 +30,6 @@ router.get('/:id', async(req, res) =>{
         }
     }
 );
-
-
-//Actualizar 
 router.put('/:id', async(req, res) =>{
         const dato = await Curso.findOneAndUpdate({
                 id: req.params.id}, req.body, {new: true                
@@ -51,8 +42,6 @@ router.put('/:id', async(req, res) =>{
         }
     }
 );
-
-//Obtener 
 router.delete('/:id', async(req, res) =>{
         const dato = await Curso.findOneAndDelete({id: req.params.id});
         if (dato) {
