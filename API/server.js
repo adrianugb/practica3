@@ -1,6 +1,3 @@
-
-//Declaraciones de variables la palabra const es para crear variables unicas
-//require es una analogia de importar una libreria
 const express = require('express');
 //mongoose aca usa todas las funciones
 const mongoose = require('mongoose');
@@ -12,11 +9,7 @@ const RouterEstudiantes = require('./routers/EstudiantesRourtes');
 const RouterSede = require('./routers/SedeRourtes');
 const RouterProfesores = require('./routers/ProfesoresRourtes');
 
-//asginas rutas
-//variables para el https o web
 const cors = require('cors');
-
-//se hace una instancia para que app sea el express
 const app = express();
 const PORT = 3000;
 
@@ -31,13 +24,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/academias',{
 app.use(cors());
 app.use(bodyParse.json());
 
-
-
-//Rutas del api
 app.use('/api/cursos', RouterCurso)
 app.use('/api/estudiantes', RouterEstudiantes)
-app.use('/api/sedes', SedeRourtes)
-app.use('/api/profesores', ProfesoresRourtes)
+app.use('/api/sedes', RouterSede)
+app.use('/api/profesores', RouterProfesores)
 
 
 //Ocupamos el servidor funcional
